@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.container {
+  width: 90%;
+  margin: auto;
+}
+.btn {
+  display: inline-block;
+  padding: 0.7em 1.5em;
+  background: #302929;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 1rem;
+  text-align: center;
+}
+.btn:hover {
+  background: #6c4b4b;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.logo {
+  font-size: 1.5rem;
+}
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+.menu a {
+  text-decoration: none;
+  color: #333;
+}
+.menu a:hover {
+  color: #117964;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+}
+#toggle-menu {
+  display: none;
+}
+.showcase {
+  height: 100vh;
+  background: url('cafeImage.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.showcase h1 {
+  font-size: 2.5rem;
+}
+.tagline {
+  font-family: 'Meow Script', cursive;
+  font-size: 1.5rem;
+}
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+.split img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+.menu-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.menu-item, .card {
+  text-align: center;
+}
+.testimonials {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.testimonials img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+input, textarea {
+  width: 100%;
+  padding: 0.7em;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
+footer {
+  background: #f9f9f9;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  #toggle-menu:checked ~ .menu {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Animated Elements */
+.showcase h1 {
+  animation: zoomIn 1s ease forwards;
+}
+.showcase .tagline {
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.split img {
+  animation: slideInRight 1s ease forwards;
+}
+
+.card, .menu-item {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease forwards;
+}
+.card:hover, .menu-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.card p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.card .btn {
+  margin-top: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+/* Button Enhancements */
+.btn {
+  transition: transform 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
